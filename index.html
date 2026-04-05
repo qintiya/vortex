@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VORTEX Streaming - Watch Movies & TV Shows Online</title>
+    <script>
+        if (!/\/trending\.html(?:[?#].*)?$/.test(window.location.pathname)) {
+            window.location.replace('trending.html');
+        }
+    </script>
     <meta name="description" content="Watch movies and TV shows online on VORTEX Streaming. Stream the latest releases and trending content in high quality.">
     <meta name="keywords" content="stream movies, watch tv shows, online streaming, vortex streaming, movies online, tv shows online, trending movies">
     <meta name="robots" content="index,follow">
@@ -43,20 +48,10 @@
                 <h1><i class="fas fa-film"></i> Vortex</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="movies.html" class="nav-link">Movies</a></li>
-                <li><a href="tvshows.html" class="nav-link">TV Shows</a></li>
-                <li><a href="trending.html" class="nav-link">Trending</a></li>
+                <li><a href="trending.html" class="nav-link active">Trending</a></li>
                 <li><a href="mylist.html" class="nav-link">My List</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" type="button"><i class="fas fa-bars"></i></button>
-            <div class="nav-search">
-                <input type="text" class="search-input" placeholder="Search movies, TV shows...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="network-status" id="network-status">
-                <i class="fas fa-wifi"></i> Checking...
-            </div>
+            
             <button class="btn btn-secondary install-btn" id="install-btn" type="button" style="display: none;">
                 <i class="fas fa-download"></i> Install
             </button>

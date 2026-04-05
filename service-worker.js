@@ -1,12 +1,9 @@
-const CACHE_NAME = 'vortex-cache-v3';
+const CACHE_NAME = 'vortex-cache-v4';
 
 const CORE_ASSETS = [
   './',
   './index.html',
-  './movies.html',
-  './tvshows.html',
   './trending.html',
-  './mylist.html',
   './movie-detail.html',
   './styles.min.css',
   './script.min.js',
@@ -66,7 +63,7 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
           return res;
         })
-        .catch(() => caches.match(req).then((r) => r || caches.match('./index.html')))
+        .catch(() => caches.match(req).then((r) => r || caches.match('./trending.html') || caches.match('./index.html')))
     );
     return;
   }
